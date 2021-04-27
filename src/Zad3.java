@@ -59,7 +59,7 @@ public class Zad3 {
             number3 = generateNumber(min, max);
             sum = sumNumbers(number1, number2, number3);
             mid = midValue(number1, number2, number3);
-        } while (!(sum > 3 * mid));
+        } while (!(sum > (3 * mid)));
 
         System.out.println("Number 1: " + number1);
         System.out.println("Number 2: " + number2);

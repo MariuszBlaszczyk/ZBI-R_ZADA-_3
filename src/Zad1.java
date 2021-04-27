@@ -18,7 +18,7 @@ public class Zad1 {
                 number = scan.nextInt();
                 error = false;
             } catch (InputMismatchException e) {
-                System.err.println("Please give a number.");
+                System.err.println("You must specify a number. Please try again: ");
                 scan.nextLine();
             }
         } while (error);
@@ -42,18 +42,11 @@ public class Zad1 {
         for (int i = 2; i < min; i++) {
             if (number1 % i == 0 && number2 % i == 0) {
                 System.out.print(i + " ");
-                //jak zrobić żeby tylko raz wyświetlało dzielniki?
-                //counter++ i ++counter zwracają taką samą liczbę, dlatego którego lepiej użyć licząc licznik
-                //i w ogóle kiedy lepiej użyć ++counter
                 counter++;
-
-                //jak to zapisać żeby wyświetliło wspólne liczniki bez powtarzania  w jendej linii, no i liczbę
-                //wspólnych dzielników bo się zakręcilem trochę
             }
         }
         System.out.print("\n" + "Number of common dividers: ");
         System.out.print(counter + "\t");
-        //jak zrobić żeby tylko raz wyświetlało licznik?
         return counter;
     }
 
