@@ -13,18 +13,18 @@ public class Zad1 {
         Scanner scan = new Scanner(System.in);
         int number = 0;
         boolean error = true;
-        try {
-            number = scan.nextInt();
-        } catch (InputMismatchException e) {
-            System.err.println("The value given is not a number, pleae give it again: ");
-            scan.nextLine();
-            scan.nextInt();
-        }
+        do {
+            try {
+                number = scan.nextInt();
+                error = false;
+            } catch (InputMismatchException e) {
+                System.err.println("Please give a number.");
+                scan.nextLine();
+            }
+        } while (error);
         return number;
-    }// jeśli wpiszę bezpośrednio z ręki 60 i 30 to wynikiem jest 6, natomiast jeśli wpiszę najpierw literę,
-    //wyskoczy wyjątk to podaję 60, do drugiej liczby znów daję litere wyskakuje wyjątek, a po niej daje cyfrę,
-    // i wtedy niby podałem 60 i 30, ale wynik z licznika podaje 0 zamiat 6. Próbuje się nauczyć tej konstrukcji
-    //try catch, ale czegoś tam jeszcze nie ogarniam.
+    }
+
 
 
     static int minimum(int... numbers) {
@@ -51,15 +51,16 @@ public class Zad1 {
                 //wspólnych dzielników bo się zakręcilem trochę
             }
         }
-        System.out.print("Number of common dividers: ");
+        System.out.print("\n" + "Number of common dividers: ");
         System.out.print(counter + "\t");
         //jak zrobić żeby tylko raz wyświetlało licznik?
         return counter;
     }
 
     static boolean numeratorIsACommonDivisor(int number1, int number2) {
-        boolean result1 = number1 % commonDividers(number1, number2) == 0;
-        boolean result2 = number2 % commonDividers(number1, number2) == 0;
+        int cd = commonDividers(number1, number2);
+        boolean result1 = number1 % cd == 0;
+        boolean result2 = number2 % cd == 0;
         return result1 || result2;
     }
 
