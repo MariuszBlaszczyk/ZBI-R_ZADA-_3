@@ -38,9 +38,11 @@ public class Zad1 {
     static int commonDividers(int number1, int number2) {
         int counter = 0;
         int min = minimum(number1, number2);
+        System.out.print("Common dividers is: ");
         for (int i = 2; i < min; i++) {
             if (number1 % i == 0 && number2 % i == 0) {
-                System.out.print("Common dividers is: " + i + "\t");
+                System.out.print(i + " ");
+                //jak zrobić żeby tylko raz wyświetlało dzielniki?
                 //counter++ i ++counter zwracają taką samą liczbę, dlatego którego lepiej użyć licząc licznik
                 //i w ogóle kiedy lepiej użyć ++counter
                 counter++;
@@ -49,7 +51,9 @@ public class Zad1 {
                 //wspólnych dzielników bo się zakręcilem trochę
             }
         }
-        System.out.print("Number of common dividers: " + counter);
+        System.out.print("Number of common dividers: ");
+        System.out.print(counter + "\t");
+        //jak zrobić żeby tylko raz wyświetlało licznik?
         return counter;
     }
 
@@ -70,8 +74,7 @@ public class Zad1 {
             number2 = getNumberFromUser();
         } while (!numeratorIsACommonDivisor(number1, number2));
 
-        System.out.println("Number1: " + number1);
-        System.out.println("Number2: " + number2);
+
 
     }
 }
