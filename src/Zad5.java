@@ -16,6 +16,7 @@ public class Zad5 {
         boolean error = true;
         do {
             try {
+                System.out.println("Give the integer");
                 number = scan.nextInt();
                 error = false;
             } catch (InputMismatchException e) {
@@ -26,16 +27,24 @@ public class Zad5 {
         return number;
     }
 
-//    static int howManyEvenNumbersIsInEvenPosition(int number) {
-//        int counter = 0;
-//        while (number > 0) {
-//
-//        }
-//    }
+    static int howManyEvenNumbersIsInEvenPosition(int number) {
+        int counter = 0;
+        int x;
+        boolean evenPos = true;
+        while (number > 0) {
+            x = number %= 10;
+            if (x % 2 == 0 && evenPos) {
+                counter++;
+            }
+            evenPos = false;
+        }
+        return counter;
+    }
 
     public static void main(String[] args) {
 
         int number = getNumberFromUser();
+        System.out.println(howManyEvenNumbersIsInEvenPosition(number));
 
     }
 }
