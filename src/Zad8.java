@@ -17,10 +17,9 @@ public class Zad8 {
     }
 
     static int oddDivisors(int number) {
-        int moreOdd;
         int counter = 0;
         for (int i = 3; i < number; i++) {
-            if (i % 2 != 0) {
+            if (number % i != 0) {
                 counter++;
             }
         }
