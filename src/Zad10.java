@@ -55,7 +55,7 @@ public class Zad10 {
         int gcd = 0;
         int min = minValue(number1, number2);
         for (int i = 1; i <= min; i--) {
-            if (number1 % 2 == 0 && number2 % 2 == 0) {
+            if (number1 % i == 0 && number2 % i == 0) {
                 gcd = maxValue(i, gcd);
             }
         }
