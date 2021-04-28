@@ -28,14 +28,14 @@ public class Zad7 {
 
     static int evenNumbersCounter(int... numbers) {
         int counter = 0;
-        int x = 0;
         for (int value : numbers) {
             while (value > 0) {
+                int x;
                 x = value % 10;
                 if (x % 2 == 0) {
                     counter++;
-                    value /= 10;
                 }
+                value /= 10;
             }
         }
         return counter;
@@ -43,9 +43,9 @@ public class Zad7 {
 
     static int digitsCounter(int... numbers) {
         int counter = 0;
-        int x = 0;
         for (int value : numbers) {
             while (value > 0) {
+                int x;
                 x = value % 10;
                 counter++;
                 value /= 10;
