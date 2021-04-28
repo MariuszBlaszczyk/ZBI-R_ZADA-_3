@@ -15,6 +15,7 @@ public class Zad7 {
         boolean error = true;
         do {
             try {
+                System.out.println("Enter the number: ");
                 number = scan.nextInt();
                 error = false;
             } catch (InputMismatchException e) {
@@ -33,6 +34,7 @@ public class Zad7 {
                 x = value % 10;
                 if (x % 2 == 0) {
                     counter++;
+                    value /= 10;
                 }
             }
         }
@@ -46,6 +48,7 @@ public class Zad7 {
             while (value > 0) {
                 x = value % 10;
                 counter++;
+                value /= 10;
             }
         }
         return counter;
