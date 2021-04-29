@@ -32,12 +32,13 @@ public class Zad5 {
         int x;
         boolean evenPos = true;
         while (number > 0) {
-            x = number %= 10;
+            x = number % 10;
             if (x % 2 == 0 && evenPos) {
                 counter++;
             }
-            evenPos = false;
+            !evenPos;
         }
+
         return counter;
     }
 

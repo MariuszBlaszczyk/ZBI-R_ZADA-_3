@@ -55,10 +55,7 @@ public class Zad12 {
         }
         return true;
     }
-
-    static boolean isNotPrime2(int number) {
-        return !isPrime(number);
-    }
+    
 
 
     public static void main(String[] args) {
@@ -72,7 +69,7 @@ public class Zad12 {
             number1 = generateNumber(min, max);
             number2 = generateNumber(min, max);
             sum = unities(number1) + tens(number2);
-        } while (!(isNotPrime2(sum) && sum > 5));
+        } while (!(isPrime(sum) && sum > 5));
 
         System.out.println("Number1 is: " + number1);
         System.out.println("Number2 is: " + number2);
