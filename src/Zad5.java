@@ -27,7 +27,7 @@ public class Zad5 {
         return number;
     }
 
-    static int howManyEvenNumbersIsInEvenPosition(int number) {
+    static int howManyEvenDigitsIsInEvenPosition(int number) {
         int counter = 0;
         boolean evenPos = true;
         while (number > 0) {
@@ -43,7 +43,7 @@ public class Zad5 {
     public static void main(String[] args) {
 
         int number = getNumberFromUser();
-        System.out.println(howManyEvenNumbersIsInEvenPosition(number));
+        System.out.println(howManyEvenDigitsIsInEvenPosition(number));
 
     }
 }
