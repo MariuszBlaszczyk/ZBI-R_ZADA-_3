@@ -34,7 +34,6 @@ public class Zad13 {
                 scan.nextLine();
             }
         } while (error);
-        System.out.println("Number:" + number);
         return number;
     }
 
@@ -52,17 +51,16 @@ public class Zad13 {
         int number1 = getNumberFromUser(min, max);
         int number;
         int latest = number1;
-        for (int i = 1; i < 9; i++) {
+        for (int i = 1; i < 10; i++) {
             do {
                 number = getNumberFromUser(min, max);
-                if ((unities(latest) != tens(number) || unities(latest) != 0)) {
+                if (unities(latest) != tens(number) && unities(latest) != 0) {
                     System.out.println("The unity digit of the first number is not the same as the " +
                             "tens digit of the second number.");
                 }
             } while (!(unities(latest) == tens(number) || unities(latest) == 0));
-            System.out.println("Number: " + number);
             latest = number;
-            if (unities(number) == 0) {
+            if (unities(latest) == 0) {
                 sum += latest;
             }
         }
@@ -74,7 +72,7 @@ public class Zad13 {
         int min = 10;
         int max = 99;
 
-        System.out.println(sumOfNumbersWhoseOnesDigitIIsZero(min, max));
+        System.out.println("Sum:" + sumOfNumbersWhoseOnesDigitIIsZero(min, max));
 
 
     }
