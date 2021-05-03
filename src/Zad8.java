@@ -48,7 +48,7 @@ public class Zad8 {
 
         System.out.println("Number1 is: " + number1);
         System.out.println("Number2 is: " + number2);
-//Czy musi wyświetlać się słowo Optional???
+
         System.out.println("Number with more odd divisors: " + oddDivisorsIsBigger(number1, number2));
     }
 }
