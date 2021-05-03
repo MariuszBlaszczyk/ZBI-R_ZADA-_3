@@ -56,44 +56,7 @@ public class Zad13 {
 
         num1 = getNumberFromUser(min, max);
 
-        do {
-            num2 = getNumberFromUser(min, max);
-            if (tens(num2) != unities(num1)) {
-                System.out.println("The tens digit must be the same as the unity digit of the previously given number.");
-            }
-            num3 = getNumberFromUser(min, max);
-            if (tens(num3) != unities(num2)) {
-                System.out.println("The tens digit must be the same as the unity digit of the previously given number.");
-            }
-            num4 = getNumberFromUser(min, max);
-            if (tens(num4) != unities(num3)) {
-                System.out.println("The tens digit must be the same as the unity digit of the previously given number.");
-            }
-            num5 = getNumberFromUser(min, max);
-            if (tens(num5) != unities(num4)) {
-                System.out.println("The tens digit must be the same as the unity digit of the previously given number.");
-            }
-            num6 = getNumberFromUser(min, max);
-            if (tens(num6) != unities(num5)) {
-                System.out.println("The tens digit must be the same as the unity digit of the previously given number.");
-            }
-            num7 = getNumberFromUser(min, max);
-            if (tens(num7) != unities(num6)) {
-                System.out.println("The tens digit must be the same as the unity digit of the previously given number.");
-            }
-            num8 = getNumberFromUser(min, max);
-            if (tens(num8) != unities(num7)) {
-                System.out.println("The tens digit must be the same as the unity digit of the previously given number.");
-            }
-            num9 = getNumberFromUser(min, max);
-            if (tens(num9) != unities(num8)) {
-                System.out.println("The tens digit must be the same as the unity digit of the previously given number.");
-            }
-            num10 = getNumberFromUser(min, max);
-            if (tens(num10) != unities(num9)) {
-                System.out.println("The tens digit must be the same as the unity digit of the previously given number.");
-            }
-        } while (!(tens(num2) == unities(num1) || unities(num1) == 0));
+        
 
     }
 }
