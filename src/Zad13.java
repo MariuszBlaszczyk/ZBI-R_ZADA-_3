@@ -49,6 +49,9 @@ public class Zad13 {
     static int sumOfNumbersWhoseOnesDigitIIsZero(int min, int max) {
         int sum = 0;
         int number1 = getNumberFromUser(min, max);
+        if (unities(number1) == 0) {
+            sum += number1;
+        }
         int number;
         int latest = number1;
         for (int i = 1; i < 10; i++) {
