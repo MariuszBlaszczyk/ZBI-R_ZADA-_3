@@ -31,12 +31,14 @@ public class Zad5 {
 
     static int howManyEvenDigitsIsInEvenPosition(int number) {
         int counter = 0;
+        int digit;
         boolean evenPos = true;
         while (number > 0) {
-            number %= 10;
-            if (number % 2 == 0 && evenPos) {
+            digit = number % 10;
+            if (digit % 2 == 0 && evenPos) {
                 counter++;
             }
+            number /= 10;
             evenPos = !evenPos;
         }
         return counter;
