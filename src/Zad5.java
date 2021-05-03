@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -43,7 +45,7 @@ public class Zad5 {
     public static void main(String[] args) {
 
         int number = getNumberFromUser();
-        System.out.println(howManyEvenDigitsIsInEvenPosition(number));
+        System.out.println("Counter: " + howManyEvenDigitsIsInEvenPosition(number));
 
     }
 }
