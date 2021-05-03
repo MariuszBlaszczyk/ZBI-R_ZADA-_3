@@ -55,7 +55,7 @@ public class Zad12 {
         }
         return true;
     }
-    
+
 
 
     public static void main(String[] args) {
