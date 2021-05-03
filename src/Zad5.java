@@ -37,7 +37,6 @@ public class Zad5 {
             }
             evenPos = !evenPos;
         }
-
         return counter;
     }
 
