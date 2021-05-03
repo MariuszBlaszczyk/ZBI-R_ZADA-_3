@@ -27,13 +27,14 @@ public class Zad13 {
                         System.out.println("The number cannot be less than " + min + " and bigger than " + max +
                                 ", please provide a new number:");
                     }
-                } while (!(min < number && number < max));
+                } while (!(min <= number && number <= max));
                 error = false;
             } catch (InputMismatchException e) {
                 System.out.println("You must give a number!");
                 scan.nextLine();
             }
         } while (error);
+        System.out.println("Number:" + number);
         return number;
     }
 
@@ -54,13 +55,14 @@ public class Zad13 {
         for (int i = 1; i < 9; i++) {
             do {
                 number = getNumberFromUser(min, max);
-                if ((unities(latest) != tens(number))) {
+                if ((unities(latest) != tens(number) || unities(latest) != 0)) {
                     System.out.println("The unity digit of the first number is not the same as the " +
                             "tens digit of the second number.");
                 }
             } while (!(unities(latest) == tens(number) || unities(latest) == 0));
+            System.out.println("Number: " + number);
             latest = number;
-            if (unities(latest) == 0) {
+            if (unities(number) == 0) {
                 sum += latest;
             }
         }
