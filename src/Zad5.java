@@ -29,14 +29,13 @@ public class Zad5 {
 
     static int howManyEvenNumbersIsInEvenPosition(int number) {
         int counter = 0;
-        int x;
         boolean evenPos = true;
         while (number > 0) {
-            x = number % 10;
-            if (x % 2 == 0 && evenPos) {
+            number %= 10;
+            if (number % 2 == 0 && evenPos) {
                 counter++;
             }
-            !evenPos;
+            evenPos = !evenPos;
         }
 
         return counter;
