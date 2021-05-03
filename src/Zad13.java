@@ -46,17 +46,34 @@ public class Zad13 {
         return (number % 100) / 10;
     }
 
+    static int sumOfNumbersWhoseOnesDigitIIsZero(int min, int max) {
+        int sum = 0;
+        int number1 = getNumberFromUser(min, max);
+        int number;
+        int latest = number1;
+        for (int i = 1; i < 9; i++) {
+            do {
+                number = getNumberFromUser(min, max);
+                if ((unities(latest) != tens(number))) {
+                    System.out.println("The unity digit of the first number is not the same as the " +
+                            "tens digit of the second number.");
+                }
+            } while (!(unities(latest) == tens(number) || unities(latest) == 0));
+            latest = number;
+            if (unities(latest) == 0) {
+                sum += latest;
+            }
+        }
+        return sum;
+    }
 
     public static void main(String[] args) {
 
         int min = 10;
         int max = 99;
-        int num1, num2, num3, num4, num5, num6, num7, num8, num9, num10;
 
+        System.out.println(sumOfNumbersWhoseOnesDigitIIsZero(min, max));
 
-        num1 = getNumberFromUser(min, max);
-
-        
 
     }
 }
