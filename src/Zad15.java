@@ -56,7 +56,7 @@ public class Zad15 {
 
         do {
             number2 = getNumberFromUser();
-        } while (!(averagePlusNumber(number1, number2) > number1));
-        //ma byc mniejsza o co najmniej 20 od wylosowanej liczby
+        } while (!(averagePlusNumber(number1, number2) - 20 > number1));
+
     }
 }
