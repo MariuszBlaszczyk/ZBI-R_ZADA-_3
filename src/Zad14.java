@@ -6,7 +6,7 @@ public class Zad14 {
     /*
     Napisz program, który symuluje prostą grę dwuosobową. Aplikacja prosi
     pierwszego użytkownika o podanie dowolnej liczby z przedziału
-        <100, 999>. Następnie drugi użytkownik podaje liczby, dopóki nie uda
+    <100, 999>. Następnie drugi użytkownik podaje liczby, dopóki nie uda
     mu się podać takiej, która ma identyczną sumę cyfr, jak liczba podana
     przez przeciwnika. Należy zliczyć ilość prób, które potrzebował gracz,
     żeby podać prawidłową liczbę. Następnie drugi gracz podaje liczbę
@@ -47,20 +47,23 @@ i   nformacji o zwycięzcy.
         return sum;
     }
 
+
     static int numberOfTrials(int userNumber) {
         int counter = 0;
-        int trailNumber;
-        for (int i = 0; i < 5; i++) {
+        int trailNumber = 0;
+        while (!(sumDigits(userNumber) == sumDigits(trailNumber))) {
             trailNumber = getNumberFromUser(100, 999);
-            System.out.println("The sum of the digits is not identical, keep trying.");
-            if (sumDigits(userNumber) == sumDigits(trailNumber)) {
-                counter++;
-                System.out.println("Bravo, you have managed to find a number with the same sum of digits after "
-                        + counter + " trying.");
-                break;
+            if (!(sumDigits(userNumber) == sumDigits(trailNumber)) && counter <= 4) {
+                System.out.println("The sum of the digits is not identical, keep trying.");
             }
             counter++;
+            if (!(sumDigits(userNumber) == sumDigits(trailNumber)) && counter == 5) {
+                System.out.println("You have reached the maximum attempt counter: " + counter + "\n");
+                return 5;
+            }
         }
+        System.out.println("Bravo, you have managed to find a number with the same sum of digits after " + counter +
+                " attempts" + "\n");
         return counter;
     }
 
