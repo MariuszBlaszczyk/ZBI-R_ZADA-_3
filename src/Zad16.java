@@ -50,6 +50,23 @@ public class Zad16 {
         return Math.sqrt(x / 2.0);
     }
 
+    static void finalResult(double minUser, double maxUser, double minDraw, double maxDraw) {
+        double minDev = Double.MAX_VALUE;
+        double maxDev = Double.MIN_VALUE;
+        for (double i = 1; i <= 10; i++) {
+            i = getNumberFromUser(minUser, maxUser);
+            for (double j = 1; j <= 10; j++) {
+                j = generateNumber(minDraw, maxDraw);
+                if (Math.abs(i - j) >= Math.min(minDev, standardDeviation(i, j))) {
+                    System.out.println("Minimum deviation has : " + i + " and " + j);
+                }
+                if (Math.abs(i - j) >= Math.max(minDev, standardDeviation(i, j))) {
+                    System.out.println("Maximum deviation has: " + i + " and " + j);
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
 
         double minUser = 4.5;
@@ -57,6 +74,8 @@ public class Zad16 {
 
         double minDraw = 3.5;
         double maxDraw = 12.5;
-        
+
+        finalResult(minUser, maxUser, minDraw, maxDraw);
+
     }
 }
