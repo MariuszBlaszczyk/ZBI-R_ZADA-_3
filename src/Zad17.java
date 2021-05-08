@@ -35,15 +35,35 @@ public class Zad17 {
         return Math.sqrt(halfPerimeter * a * b * c);
     }
 
+    static double radiusOfCircle(double side1, double side2, double side3) {
+        double side = side1 * side2 * side3;
+        double area = areaOfTriangle(side1, side2, side3);
+        return side / (4 * area);
+    }
+
+    static double areaOfCircle(double side1, double side2, double side3) {
+        double radius = radiusOfCircle(side1, side2, side3);
+        return Math.PI * Math.pow(radius, 2);
+    }
+
 
     public static void main(String[] args) {
 
         double user1, user2, user3;
 
         do {
+            System.out.println("Enter the first side");
             user1 = getNumberFromUser();
+            System.out.println("Enter the second side");
             user2 = getNumberFromUser();
+            System.out.println("Enter the third side");
             user3 = getNumberFromUser();
-        } while ();
+        } while (!(areaOfCircle(user1, user2, user3) > 100));
+
+        System.out.println("Side 1 = " + user1);
+        System.out.println("Side 2 = " + user2);
+        System.out.println("Side 3 = " + user3);
+
+        System.out.println("Area of circle is: " + areaOfCircle(user1, user2, user3));
     }
 }
