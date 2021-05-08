@@ -53,7 +53,7 @@ i   nformacji o zwycięzcy.
         int trailNumber = 0;
         while (!(sumDigits(userNumber) == sumDigits(trailNumber))) {
             trailNumber = getNumberFromUser(100, 999);
-            if (!(sumDigits(userNumber) == sumDigits(trailNumber)) && counter <= 4) {
+            if (!(sumDigits(userNumber) == sumDigits(trailNumber)) && !(counter >= 4)) {
                 System.out.println("The sum of the digits is not identical, keep trying.");
             }
             counter++;
