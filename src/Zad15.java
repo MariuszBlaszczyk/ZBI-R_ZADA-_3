@@ -41,7 +41,7 @@ public class Zad15 {
             sum += value;
         }
         sum += number;
-        return sum / numbers.length + 1;
+        return sum / (numbers.length + 1);
     }
 
     public static void main(String[] args) {
