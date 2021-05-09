@@ -51,21 +51,25 @@ public class Zad16 {
     }
 
     static void finalResult(double minUser, double maxUser, double minDraw, double maxDraw) {
+        double number1;
+        double number2;
         double minDev = Double.MAX_VALUE;
         double maxDev = Double.MIN_VALUE;
         for (double i = 1; i <= 10; i++) {
-            i = getNumberFromUser(minUser, maxUser);
-            for (double j = 1; j <= 10; j++) {
-                j = generateNumber(minDraw, maxDraw);
-                if (Math.abs(i - j) >= Math.min(minDev, standardDeviation(i, j))) {
-                    System.out.println("Minimum deviation has : " + i + " and " + j);
-                }
-                if (Math.abs(i - j) >= Math.max(minDev, standardDeviation(i, j))) {
-                    System.out.println("Maximum deviation has: " + i + " and " + j);
-                }
+            number1 = getNumberFromUser(minUser, maxUser);
+            number2 = generateNumber(minDraw, maxDraw);
+            minDev = Math.min(minDev, standardDeviation(number1, number2));
+            maxDev = Math.max(maxDev, standardDeviation(number1, number2));
+            double abs = Math.abs(number1 - number2);
+            if (abs >= minDev) {
+                System.out.println("Minimum deviation has : " + number1 + " and " + number2);
+            }
+            if (abs >= maxDev) {
+                System.out.println("Maximum deviation has: " + number1 + " and " + number2);
             }
         }
     }
+
 
     public static void main(String[] args) {
 
