@@ -52,19 +52,19 @@ public class Zad18 {
         System.out.println("Y = " + y);
         double distance = distanceBetweenPoints(x, y, userNumber1, userNumber2);
         double minimum = Double.MAX_VALUE;
-        double min1 = 0;
-        double min2 = 0;
+        double number1 = 0;
+        double number2 = 0;
         for (int i = 0; i <= 5; i++) {
             userNumber1 = getNumberFromUser();
             userNumber2 = getNumberFromUser();
             if (minimum > distance) {
                 minimum = distance;
-                min1 = userNumber1;
-                min2 = userNumber2;
+                number1 = userNumber1;
+                number2 = userNumber2;
             }
         }
         System.out.println("A pair whose distance from a point with x and y coordinates is the smallest is: "
-                + min1 + " and " + min2 + ".");
+                + number1 + " and " + number2 + ".");
     }
 
     public static void main(String[] args) {
