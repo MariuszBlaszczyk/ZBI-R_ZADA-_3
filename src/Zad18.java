@@ -40,7 +40,9 @@ public class Zad18 {
         double userNumber1 = 0;
         double userNumber2 = 0;
         double x = generateNumbers(min, max);
+        System.out.println("X = " + x);
         double y = generateNumbers(min, max);
+        System.out.println("Y = " + y);
         double absDraw = Math.abs(x - y);
         double absUser = Math.abs(userNumber1 - userNumber2);
         double abs = Math.abs(absUser - absDraw);
@@ -64,5 +66,7 @@ public class Zad18 {
 
         double min = 3.5;
         double max = 9.5;
+
+        finalResult(min, max);
     }
 }
