@@ -1,3 +1,7 @@
+import java.rmi.ServerError;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class Zad18 {
 
     /*
@@ -7,4 +11,57 @@ public class Zad18 {
     Wyznacz parę, której odległość od punktu o współrzędnych x oraz y jest
     najmniejsza. Nie stosujemy tablic.
      */
+
+    static double generateNumbers(double min, double max) {
+        if (min >= max) {
+            throw new IllegalArgumentException("Random range is not correct");
+        }
+        return Math.random() * (max - min) + min;
+    }
+
+    static double getNumberFromUser() {
+        Scanner scan = new Scanner(System.in);
+        double number = 0;
+        boolean error = true;
+        do {
+            try {
+                System.out.println("Give the number");
+                number = scan.nextDouble();
+                error = false;
+            } catch (InputMismatchException e) {
+                System.err.println("You must give a number");
+                scan.nextLine();
+            }
+        } while (error);
+        return number;
+    }
+
+    static void finalResult(double min, double max) {
+        double userNumber1 = 0;
+        double userNumber2 = 0;
+        double drawNumber1 = generateNumbers(min, max);
+        double drawNumber2 = generateNumbers(min, max);
+        double absDraw = Math.abs(drawNumber1 - drawNumber2);
+        double absUser = Math.abs(userNumber1 - userNumber2);
+        double abs = Math.abs(absUser - absDraw);
+        double min1;
+        double min2;
+        double minDev = Double.MAX_VALUE;
+        for (int i = 0; i <= 5; i++) {
+            userNumber1 = getNumberFromUser();
+            userNumber1 = getNumberFromUser();
+            if (minDev > abs) {
+                minDev = abs;
+                min1 = userNumber1;
+                min2 = userNumber2;
+            }
+        }
+    }
+
+
+    public static void main(String[] args) {
+
+        double min = 3.5;
+        double max = 9.5;
+    }
 }
