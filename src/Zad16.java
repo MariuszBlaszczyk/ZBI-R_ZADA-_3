@@ -28,7 +28,7 @@ public class Zad16 {
                 } while (!(min <= number && number <= max));
                 error = false;
             } catch (InputMismatchException e) {
-                System.out.println("You must give a number!");
+                System.err.println("You must give a number!");
                 scan.nextLine();
             }
         } while (error);
@@ -50,28 +50,37 @@ public class Zad16 {
         return Math.sqrt(x / 2.0);
     }
 
+
     static void finalResult(double minUser, double maxUser, double minDraw, double maxDraw) {
         double number1;
         double number2;
+        double min1 = 0;
+        double max1 = 0;
+        double min2 = 0;
+        double max2 = 0;
         double minDev = Double.MAX_VALUE;
         double maxDev = Double.MIN_VALUE;
-        for (double i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 10; i++) {
             number1 = getNumberFromUser(minUser, maxUser);
             number2 = generateNumber(minDraw, maxDraw);
-            minDev = Math.min(minDev, standardDeviation(number1, number2));
-            maxDev = Math.max(maxDev, standardDeviation(number1, number2));
-            double abs = Math.abs(number1 - number2);
-            if (abs >= minDev) {
-                System.out.println("Minimum deviation has : " + number1 + " and " + number2);
+            if (minDev > standardDeviation(number1, number2)) {
+                minDev = standardDeviation(number1, number2);
+                min1 = number1;
+                min2 = number2;
             }
-            if (abs >= maxDev) {
-                System.out.println("Maximum deviation has: " + number1 + " and " + number2);
+            if (maxDev < standardDeviation(number1, number2)) {
+                maxDev = standardDeviation(number1, number2);
+                max1 = number1;
+                max2 = number2;
             }
         }
+        System.out.println("The pair with the smallest standard deviation is " + min1 + " and " + min2 + ".");
+        System.out.println("The pair with the largest standard deviation is " + max1 + " and " + max2 + ".");
     }
 
 
     public static void main(String[] args) {
+
 
         double minUser = 4.5;
         double maxUser = 10.5;
