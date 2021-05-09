@@ -35,6 +35,13 @@ public class Zad18 {
         } while (error);
         return number;
     }
+    
+    static double distanceBetweenPoints(double x, double y, double user1, double user2) {
+        double a = Math.pow(user1 - x, 2);
+        double b = Math.pow(user2 - y, 2);
+        double sum = a + b;
+        return Math.sqrt(sum);
+    }
 
     static void finalResult(double min, double max) {
         double userNumber1 = 0;
@@ -43,24 +50,21 @@ public class Zad18 {
         System.out.println("X = " + x);
         double y = generateNumbers(min, max);
         System.out.println("Y = " + y);
-        double absDraw = Math.abs(x - y);
-        double absUser = Math.abs(userNumber1 - userNumber2);
-        double abs = Math.abs(absUser - absDraw);
-        double min1= 0;
-        double min2 = 0;
+        double distance = distanceBetweenPoints(x, y, userNumber1, userNumber2);
         double minDev = Double.MAX_VALUE;
+        double min1 = 0;
+        double min2 = 0;
         for (int i = 0; i <= 5; i++) {
             userNumber1 = getNumberFromUser();
             userNumber2 = getNumberFromUser();
-            if (minDev > abs) {
-                minDev = abs;
+            if (minDev > distance) {
+                minDev = distance;
                 min1 = userNumber1;
                 min2 = userNumber2;
             }
         }
         System.out.println("The pair with the largest standard deviation is: " + min1 + " and " + min2 + ".");
     }
-
 
     public static void main(String[] args) {
 
