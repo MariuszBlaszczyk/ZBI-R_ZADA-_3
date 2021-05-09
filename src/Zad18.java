@@ -51,14 +51,14 @@ public class Zad18 {
         double y = generateNumbers(min, max);
         System.out.println("Y = " + y);
         double distance = distanceBetweenPoints(x, y, userNumber1, userNumber2);
-        double minimum = Double.MAX_VALUE;
+        double minDist = Double.MAX_VALUE;
         double number1 = 0;
         double number2 = 0;
         for (int i = 0; i <= 5; i++) {
             userNumber1 = getNumberFromUser();
             userNumber2 = getNumberFromUser();
-            if (minimum > distance) {
-                minimum = distance;
+            if (minDist > distance) {
+                minDist = distance;
                 number1 = userNumber1;
                 number2 = userNumber2;
             }
