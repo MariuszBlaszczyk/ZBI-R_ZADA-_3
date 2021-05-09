@@ -1,4 +1,4 @@
-import java.rmi.ServerError;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -35,7 +35,7 @@ public class Zad18 {
         } while (error);
         return number;
     }
-    
+
     static double distanceBetweenPoints(double x, double y, double user1, double user2) {
         double a = Math.pow(user1 - x, 2);
         double b = Math.pow(user2 - y, 2);
