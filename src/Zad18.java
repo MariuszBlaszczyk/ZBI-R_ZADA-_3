@@ -39,13 +39,13 @@ public class Zad18 {
     static void finalResult(double min, double max) {
         double userNumber1 = 0;
         double userNumber2 = 0;
-        double drawNumber1 = generateNumbers(min, max);
-        double drawNumber2 = generateNumbers(min, max);
-        double absDraw = Math.abs(drawNumber1 - drawNumber2);
+        double x = generateNumbers(min, max);
+        double y = generateNumbers(min, max);
+        double absDraw = Math.abs(x - y);
         double absUser = Math.abs(userNumber1 - userNumber2);
         double abs = Math.abs(absUser - absDraw);
-        double min1;
-        double min2;
+        double min1= 0;
+        double min2 = 0;
         double minDev = Double.MAX_VALUE;
         for (int i = 0; i <= 5; i++) {
             userNumber1 = getNumberFromUser();
@@ -56,6 +56,7 @@ public class Zad18 {
                 min2 = userNumber2;
             }
         }
+        System.out.println("The pair with the largest standard deviation is: " + min1 + " and " + min2 + ".");
     }
 
 
