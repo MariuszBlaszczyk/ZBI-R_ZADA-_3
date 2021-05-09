@@ -51,19 +51,20 @@ public class Zad18 {
         double y = generateNumbers(min, max);
         System.out.println("Y = " + y);
         double distance = distanceBetweenPoints(x, y, userNumber1, userNumber2);
-        double minDev = Double.MAX_VALUE;
+        double minimum = Double.MAX_VALUE;
         double min1 = 0;
         double min2 = 0;
         for (int i = 0; i <= 5; i++) {
             userNumber1 = getNumberFromUser();
             userNumber2 = getNumberFromUser();
-            if (minDev > distance) {
-                minDev = distance;
+            if (minimum > distance) {
+                minimum = distance;
                 min1 = userNumber1;
                 min2 = userNumber2;
             }
         }
-        System.out.println("The pair with the largest standard deviation is: " + min1 + " and " + min2 + ".");
+        System.out.println("A pair whose distance from a point with x and y coordinates is the smallest is: "
+                + min1 + " and " + min2 + ".");
     }
 
     public static void main(String[] args) {
