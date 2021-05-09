@@ -49,7 +49,7 @@ public class Zad18 {
         double minDev = Double.MAX_VALUE;
         for (int i = 0; i <= 5; i++) {
             userNumber1 = getNumberFromUser();
-            userNumber1 = getNumberFromUser();
+            userNumber2 = getNumberFromUser();
             if (minDev > abs) {
                 minDev = abs;
                 min1 = userNumber1;
