@@ -52,6 +52,18 @@ public class Zad20 {
         return true;
     }
 
+    static boolean everyDigitIsNotPrime(int number) {
+        int digit = 0;
+        while (number > 0) {
+            digit = number % 10;
+            if (isPrime(digit)) {
+                return false;
+            }
+            number /= 10;
+        }
+        return true;
+    }
+
     static boolean isEven(int number) {
         return number % 2 == 0;
     }
