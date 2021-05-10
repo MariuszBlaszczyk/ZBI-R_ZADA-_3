@@ -53,7 +53,7 @@ public class Zad20 {
     }
 
     static boolean everyDigitIsNotPrime(int number) {
-        int digit = 0;
+        int digit;
         while (number > 0) {
             digit = number % 10;
             if (isPrime(digit)) {
@@ -64,23 +64,51 @@ public class Zad20 {
         return true;
     }
 
-    static boolean isEven(int number) {
-        return number % 2 == 0;
+    static boolean hasMinimumFourDividers(int number) {
+        int counter = 0;
+        for (int i = 1; i < number; i++) {
+            if (number % i == 0) {
+                counter++;
+            }
+            if (counter >= 4) {
+                return true;
+            }
+        }
+        return false;
     }
+
+
+    static boolean isOdd(int number) {
+        return number % 2 != 0;
+    }
+
+//    static void draw(int a, int b) {
+//        for (int i = 0; i <; i++) {
+//
+//        }
+//    }
 
 
     public static void main(String[] args) {
 
-        int a, b;
+        int a,b;
+
+
+
 
         do {
             do {
+                System.out.println("Give the first number:");
                 a = getNumberFromUser();
-            } while ();
+            } while (!(isOdd(a)) && !(hasMinimumFourDividers(a)));
             do {
+                System.out.println("Give the second number:");
                 b = getNumberFromUser();
             } while (!everyDigitIsNotPrime(b));
         } while (!(a < b));
+
+        System.out.println(a);
+        System.out.println(b);
 
     }
 }
