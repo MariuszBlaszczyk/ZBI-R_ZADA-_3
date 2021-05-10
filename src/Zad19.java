@@ -26,26 +26,30 @@ public class Zad19 {
         return isPerfectSquare(5 * n * n + 4) || isPerfectSquare(5 * n * n - 4);
     }
 
-    static void finalResult(int number) {
-        int limit = number + 500;
+    static void finalResult(int min, int max) {
+        int number1;
+        do {
+            number1 = generateNumber(min, max);
+        } while (!(isFibonacci(number1)));
+        System.out.println("The first number drawn is: " + number1);
+        int limit = number1 + 500;
         int index = 1;
-        for (int i = number; i <= limit; i += 5) {
+        for (int i = number1; i <= limit; i += 5) {
+            while (i > limit) {
+                i = generateNumber(min, max);
+            }
             System.out.println("Number " + index + ": " + i);
             index++;
         }
     }
 
+
     public static void main(String[] args) {
 
         int min = 1;
         int max = 400;
-        int number1;
 
-        do {
-            number1 = generateNumber(min, max);
-        } while (!(isFibonacci(number1)));
 
-        System.out.println(number1);
-        finalResult(number1);
+        finalResult(min, max);
     }
 }
