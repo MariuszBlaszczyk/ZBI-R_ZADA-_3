@@ -71,13 +71,16 @@ public class Zad20 {
 
     public static void main(String[] args) {
 
-        int number1, number2;
+        int a, b;
 
         do {
-            number1 = getNumberFromUser();
-            number2 = getNumberFromUser();
-        } while (!(number1 < number2));
-
+            do {
+                a = getNumberFromUser();
+            } while ();
+            do {
+                b = getNumberFromUser();
+            } while (!everyDigitIsNotPrime(b));
+        } while (!(a < b));
 
     }
 }
