@@ -36,6 +36,24 @@ public class Zad20 {
         return number;
     }
 
+    static boolean hasMinimumFourDividers(int number) {
+        int counter = 0;
+        for (int i = 1; i <= number; i++) {
+            if (number % i == 0) {
+                counter++;
+            }
+            if (counter >= 4) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    static boolean isOdd(int number) {
+        return number % 2 != 0;
+    }
+
     static boolean isPrime(int number) {
         if (number < 2) {
             return false;
@@ -64,23 +82,7 @@ public class Zad20 {
         return true;
     }
 
-    static boolean hasMinimumFourDividers(int number) {
-        int counter = 0;
-        for (int i = 1; i < number; i++) {
-            if (number % i == 0) {
-                counter++;
-            }
-            if (counter >= 4) {
-                return true;
-            }
-        }
-        return false;
-    }
 
-
-    static boolean isOdd(int number) {
-        return number % 2 != 0;
-    }
 
 //    static void draw(int a, int b) {
 //        for (int i = 0; i <; i++) {
@@ -100,7 +102,7 @@ public class Zad20 {
             do {
                 System.out.println("Give the first number:");
                 a = getNumberFromUser();
-            } while (!(isOdd(a)) && !(hasMinimumFourDividers(a)));
+            } while (!(isOdd(a)) || !(hasMinimumFourDividers(a)));
             do {
                 System.out.println("Give the second number:");
                 b = getNumberFromUser();
