@@ -17,10 +17,35 @@ public class Zad19 {
         return new Random().nextInt(max - min + 1) + min;
     }
 
+    static boolean isPerfectSquare(int x) {
+        int s = (int) Math.sqrt(x);
+        return (s * s == x);
+    }
+
+    static boolean isFibonacci(int n) {
+        return isPerfectSquare(5 * n * n + 4) || isPerfectSquare(5 * n * n - 4);
+    }
+
+    static void finalResult(int number) {
+        int limit = number + 500;
+        int index = 1;
+        for (int i = number; i <= limit; i += 5) {
+            System.out.println("Number " + index + ": " + i);
+            index++;
+        }
+    }
 
     public static void main(String[] args) {
 
         int min = 1;
         int max = 400;
+        int number1;
+
+        do {
+            number1 = generateNumber(min, max);
+        } while (!(isFibonacci(number1)));
+
+        System.out.println(number1);
+        finalResult(number1);
     }
 }
