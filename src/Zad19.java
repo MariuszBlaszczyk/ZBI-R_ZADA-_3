@@ -32,22 +32,23 @@ public class Zad19 {
             number1 = generateNumber(min, max);
         } while (!(isFibonacci(number1)));
         System.out.println("The first number drawn is: " + number1);
-        int limit = number1 + 500;
-        int index = 1;
-        for (int i = number1; i <= limit; i += 5) {
-            while (i > limit) {
-                i = generateNumber(min, max);
-            }
-            System.out.println("Number " + index + ": " + i);
-            index++;
+        int number = 0;
+        int num = number1;
+        while (!(number > number1 + 500)) {
+            do {
+                number = generateNumber(min, max);
+            } while (!(number + 5 > num));
+            System.out.println(number);
+            num = number + 5;
         }
+        System.out.println(num);
     }
 
 
     public static void main(String[] args) {
 
         int min = 1;
-        int max = 400;
+        int max = 1000;
 
 
         finalResult(min, max);
