@@ -35,14 +35,11 @@ public class Zad19 {
         int number = 0;
         int num = number1;
         while (!(number > num + 5)) {
-            do {
-                number = generateNumber(min, max);
-            } while (!(number + 5 > num));
-            System.out.println(number);
-            num = number + 5;
+            number = generateNumber(min, max);
         }
-        System.out.println(num);
-    }
+        System.out.println(number);
+        num = number;
+}
 
 
     public static void main(String[] args) {
