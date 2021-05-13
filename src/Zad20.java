@@ -70,47 +70,68 @@ public class Zad20 {
         return true;
     }
 
-    static boolean everyDigitIsNotPrime(int number) {
+    static boolean checkDigitIsNotPrime(int number) {
         int digit;
         while (number > 0) {
             digit = number % 10;
-            if (isPrime(digit)) {
+            if (digit != 2 && digit != 3 &&
+                    digit != 5 && digit != 7)
                 return false;
-            }
             number /= 10;
         }
         return true;
     }
 
+    static boolean everyDigitIsNotPrime(int number) {
+        return (checkDigitIsNotPrime(number) && (!isPrime(number)));
+    }
 
 
-//    static void draw(int a, int b) {
-//        for (int i = 0; i <; i++) {
-//
-//        }
-//    }
+    static void draw(int a, int b) {
+        int drawNumber;
+        int index = 1;
+        int counter = 0;
+        int help;
+        int max;
+        for (int i = 1; i < 20; i++) {
+            drawNumber = generateNumber(a, b);
+            help = drawNumber;
+            System.out.println(index + ": " + drawNumber);
+            index++;
+        }
+    }
+
+
 
 
     public static void main(String[] args) {
 
-        int a,b;
-
-
+        int a, b;
 
 
         do {
+
             do {
                 System.out.println("Give the first number:");
                 a = getNumberFromUser();
+                if (!(isOdd(a)) || !(hasMinimumFourDividers(a))) {
+                    System.out.println("A number must be odd and have at least four divisors");
+                }
             } while (!(isOdd(a)) || !(hasMinimumFourDividers(a)));
+
             do {
                 System.out.println("Give the second number:");
                 b = getNumberFromUser();
-            } while (!everyDigitIsNotPrime(b));
+                if (!(everyDigitIsNotPrime(b))) {
+                    System.out.println("The digits in the given number cannot be prime numbers.");
+                }
+            } while (!(everyDigitIsNotPrime(b)));
+            if (a > b) {
+                System.out.println("The first number cannot be greater than the second number.");
+            }
+
         } while (!(a < b));
 
-        System.out.println(a);
-        System.out.println(b);
-
+        draw(a, b);
     }
 }
