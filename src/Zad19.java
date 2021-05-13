@@ -34,7 +34,7 @@ public class Zad19 {
         System.out.println("The first number drawn is: " + number1);
         int number = 0;
         int num = number1;
-        while (!(number > number1 + 500)) {
+        while (!(number > num + 5)) {
             do {
                 number = generateNumber(min, max);
             } while (!(number + 5 > num));
