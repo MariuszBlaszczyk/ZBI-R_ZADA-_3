@@ -74,12 +74,11 @@ public class Zad20 {
         int digit;
         while (number > 0) {
             digit = number % 10;
-            if (digit != 2 && digit != 3 &&
-                    digit != 5 && digit != 7)
-                return false;
+            if (!(isPrime(digit)))
+                return true;
             number /= 10;
         }
-        return true;
+        return false;
     }
 
     static boolean everyDigitIsNotPrime(int number) {
